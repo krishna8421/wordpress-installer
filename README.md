@@ -7,7 +7,7 @@ git clone https://github.com/krishna8421/wordpress_installer
 
 chmod +x wp_installer.sh
 
-[+]Run as a root user!!
+#Run as a root user!!
 
 sudo su
 
