@@ -76,12 +76,11 @@ start(){
 		clear	
 	fi		
 }
+
 end(){
 	ip=$(ip a | grep "inet 192." | cut -d " " -f 6 | cut -d "/" -f 1)
 	echo -e "[+] Wordpress Successfully Installed.\n"
 	echo -e "[>>>]You can See you Wordpress site at http://$ip/\n\n"
-
-
 }
 
 #MarCus
