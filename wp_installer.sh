@@ -41,10 +41,12 @@ start(){
 		apt update 
 		apt install apache2 perl php tar figlet libapache2-mod-php php-mysql php-curl php-gd php-xml php-mbstring php-xmlrpc php-zip php-soap php-intl mariadb-server -y
 #Start Server
-		systemctl start apache2
 		systemctl enable apache2
-		systemctl start mysql.service
+		systemctl start apache2
+		systemctl disable mysql.service
 		systemctl enable mysql.service
+		systemctl start mysql.service
+		
 #Making SQL Database
 		mysql -u root -p$rootpass -Bse "CREATE DATABASE wordpress DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;"
 		mysql -u root -p$rootpass -Bse "GRANT ALL ON wordpress.* TO 'wp_user'@'localhost' IDENTIFIED BY '$dbpass';"
